@@ -1,0 +1,25 @@
+# Local environment and secrets. `.env` in this repo contains only local dev
+# placeholders (dev-router-key / dev-admin-key) and is committed so the project
+# runs from a fresh clone; keep real secrets out of it.
+.env.*.local
+
+# Local SQLite databases and their journal files.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+
+# Python bytecode and caches.
+__pycache__/
+*.py[cod]
+
+# Generated benchmark executions.
+runs/
+
+# Runtime logs.
+logs/
+*.log
+*.log.*
+.pytest_cache/
+*.bak
+pytest-cache-files-*/
