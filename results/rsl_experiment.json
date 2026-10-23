@@ -1,0 +1,723 @@
+{
+  "config": {
+    "candidates": [
+      "qwen-small",
+      "qwen-strong"
+    ],
+    "judge_model": "qwen-strong",
+    "alpha": 0.3,
+    "epsilon": 0.4,
+    "threshold": 0.75,
+    "max_rounds": 1
+  },
+  "cold": [
+    {
+      "prompt": "计算 56 和 42 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "通过辗转相除法，我们找到了56和42的最大公约数是14。通过分解质因数，我们也可以找到它们的最大公约数，即2×7=14。"
+    },
+    {
+      "prompt": "计算 90 和 36 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "- 两个数的最小公倍数是它们的乘积除以它们的最大公约数。"
+    },
+    {
+      "prompt": "计算 187 + 64 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "187 + 64 = 251"
+    },
+    {
+      "prompt": "计算 59 + 88 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "59 + 88 等于 147。"
+    },
+    {
+      "prompt": "计算 27 × 16 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "27 × 16 等于 432。"
+    },
+    {
+      "prompt": "计算 15 × 14 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.5,
+      "q_after": 0.5,
+      "answer_tail": "15 × 14 等于 210。"
+    }
+  ],
+  "learning": [
+    {
+      "prompt": "计算 72 和 48 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.5,
+      "q_after": 0.6493,
+      "answer_tail": "因此，72和48的最大公约数是24。"
+    },
+    {
+      "prompt": "计算 63 + 29 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.5,
+      "q_after": 0.6497,
+      "answer_tail": "63 + 29 等于 92。"
+    },
+    {
+      "prompt": "计算 81 和 27 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.6497,
+      "q_after": 0.7522,
+      "answer_tail": "- 当余数为0时，我们找到了最大公约数，因为此时的除数就是最大公约数。"
+    },
+    {
+      "prompt": "计算 120 和 45 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.7522,
+      "q_after": 0.8239,
+      "answer_tail": "因此，120和45的最大公约数是15。"
+    },
+    {
+      "prompt": "计算 14 × 16 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.6493,
+      "q_after": 0.7544,
+      "answer_tail": "14 × 16 的计算结果是 224。"
+    },
+    {
+      "prompt": "计算 24 × 15 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8239,
+      "q_after": 0.8763,
+      "answer_tail": "24 × 15 等于 360。"
+    },
+    {
+      "prompt": "计算 54 和 24 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8763,
+      "q_after": 0.9113,
+      "answer_tail": "通过上述步骤，我们可以看到54和24的最大公约数是6。"
+    },
+    {
+      "prompt": "计算 36 和 24 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9113,
+      "q_after": 0.9356,
+      "answer_tail": "因此，36和24的最大公约数是12。"
+    },
+    {
+      "prompt": "计算 96 和 36 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.9356,
+      "q_after": 0.9522,
+      "answer_tail": "因此，96和36的最大公约数是12。"
+    },
+    {
+      "prompt": "计算 48 和 18 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "explore",
+      "q_before": 0.7544,
+      "q_after": 0.5872,
+      "answer_tail": "当余数为0时，原来的数18就是最大公约数。因此，48和18的最大公约数是18。"
+    },
+    {
+      "prompt": "计算 17 × 6 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.5872,
+      "q_after": 0.7109,
+      "answer_tail": "17 × 6 等于 102。"
+    },
+    {
+      "prompt": "计算 12 × 13 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.7109,
+      "q_after": 0.7975,
+      "answer_tail": "12 × 13 等于 156。"
+    },
+    {
+      "prompt": "计算 144 和 60 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "exploit",
+      "q_before": 0.9522,
+      "q_after": 0.723,
+      "answer_tail": "因此，144和60的最大公约数是8。"
+    },
+    {
+      "prompt": "计算 99 + 76 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7975,
+      "q_after": 0.8581,
+      "answer_tail": "99 + 76 等于 175。"
+    },
+    {
+      "prompt": "计算 145 + 87 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8581,
+      "q_after": 0.9005,
+      "answer_tail": "145 + 87 等于 232。"
+    },
+    {
+      "prompt": "计算 134 + 58 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9005,
+      "q_after": 0.9302,
+      "answer_tail": "134 + 58 等于 192。"
+    },
+    {
+      "prompt": "计算 208 + 97 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.9302,
+      "q_after": 0.951,
+      "answer_tail": "208 + 97 等于 305。"
+    },
+    {
+      "prompt": "计算 156 + 39 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.951,
+      "q_after": 0.9656,
+      "answer_tail": "156 + 39 等于 195。"
+    },
+    {
+      "prompt": "计算 100 和 75 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "exploit",
+      "q_before": 0.9656,
+      "q_after": 0.7341,
+      "answer_tail": "10. 从 `a` 和 `b` 中分别取出余数，然后将余数与较小的数 `b` 交换位置，再将较大的数 `a` 与较小的数 `b` 交换位置"
+    },
+    {
+      "prompt": "计算 21 × 18 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7341,
+      "q_after": 0.8137,
+      "answer_tail": "21 × 18 的计算结果是 378。"
+    },
+    {
+      "prompt": "计算 19 × 23 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8137,
+      "q_after": 0.8695,
+      "answer_tail": "19 × 23 的结果是 437。"
+    },
+    {
+      "prompt": "计算 77 + 45 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8695,
+      "q_after": 0.9085,
+      "answer_tail": "77 + 45 等于 122。"
+    },
+    {
+      "prompt": "计算 37 + 58 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9085,
+      "q_after": 0.9358,
+      "answer_tail": "37 + 58 等于 95。"
+    },
+    {
+      "prompt": "计算 84 和 30 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "exploit",
+      "q_before": 0.9358,
+      "q_after": 0.7142,
+      "answer_tail": "当余数为 0时，即 84 和 30 之间的最大公约数就是 2。"
+    },
+    {
+      "prompt": "计算 72 和 48 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.723,
+      "q_after": 0.8036,
+      "answer_tail": "因此，72和48的最大公约数是24。"
+    },
+    {
+      "prompt": "计算 63 + 29 等于多少？",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.7142,
+      "q_after": 0.7998,
+      "answer_tail": "63 + 29 等于 92。"
+    },
+    {
+      "prompt": "计算 81 和 27 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8036,
+      "q_after": 0.8599,
+      "answer_tail": "- 当余数为0时，我们找到了最大公约数，因为此时的除数就是最大公约数。"
+    },
+    {
+      "prompt": "计算 120 和 45 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.8599,
+      "q_after": 0.8994,
+      "answer_tail": "因此，120和45的最大公约数是15。"
+    },
+    {
+      "prompt": "计算 14 × 16 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.8994,
+      "q_after": 0.9293,
+      "answer_tail": "14 × 16 等于 224。"
+    },
+    {
+      "prompt": "计算 24 × 15 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9293,
+      "q_after": 0.9502,
+      "answer_tail": "24 × 15 等于 360。"
+    },
+    {
+      "prompt": "计算 54 和 24 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9502,
+      "q_after": 0.9629,
+      "answer_tail": "通过上述步骤，我们可以看到54和24的最大公约数是6。"
+    },
+    {
+      "prompt": "计算 36 和 24 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9629,
+      "q_after": 0.9718,
+      "answer_tail": "因此，36和24的最大公约数是12。"
+    },
+    {
+      "prompt": "计算 96 和 36 的最大公约数，并说明步骤。",
+      "model": "qwen-small",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "explore",
+      "q_before": 0.7998,
+      "q_after": 0.6191,
+      "answer_tail": "因此，96 和 36 的最大公约数是 36。"
+    },
+    {
+      "prompt": "计算 48 和 18 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.9718,
+      "q_after": 0.9775,
+      "answer_tail": "因此，48和18的最大公约数是6。"
+    },
+    {
+      "prompt": "计算 17 × 6 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.9775,
+      "q_after": 0.984,
+      "answer_tail": "17 × 6 等于 102。"
+    },
+    {
+      "prompt": "计算 12 × 13 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.984,
+      "q_after": 0.9886,
+      "answer_tail": "12 × 13 等于 156。"
+    },
+    {
+      "prompt": "计算 144 和 60 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "exploit",
+      "q_before": 0.9886,
+      "q_after": 0.7485,
+      "answer_tail": "因此，144和60的最大公约数是8。"
+    },
+    {
+      "prompt": "计算 99 + 76 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7485,
+      "q_after": 0.8237,
+      "answer_tail": "99 + 76 等于 175。"
+    },
+    {
+      "prompt": "计算 145 + 87 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.8237,
+      "q_after": 0.8763,
+      "answer_tail": "145 + 87 等于 232。"
+    },
+    {
+      "prompt": "计算 134 + 58 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "explore",
+      "q_before": 0.8763,
+      "q_after": 0.9131,
+      "answer_tail": "134 + 58 等于 192。"
+    },
+    {
+      "prompt": "计算 208 + 97 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9131,
+      "q_after": 0.9385,
+      "answer_tail": "所以，208 + 97 等于 305。"
+    },
+    {
+      "prompt": "计算 156 + 39 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9385,
+      "q_after": 0.9566,
+      "answer_tail": "156 + 39 等于 195。"
+    },
+    {
+      "prompt": "计算 100 和 75 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9566,
+      "q_after": 0.9674,
+      "answer_tail": "因此，100和75的最大公约数是25。"
+    },
+    {
+      "prompt": "计算 21 × 18 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9674,
+      "q_after": 0.9769,
+      "answer_tail": "21 × 18 等于 378。"
+    },
+    {
+      "prompt": "计算 19 × 23 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9769,
+      "q_after": 0.9836,
+      "answer_tail": "19 × 23 等于 437。"
+    },
+    {
+      "prompt": "计算 77 + 45 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9836,
+      "q_after": 0.9882,
+      "answer_tail": "77 + 45 等于 122。"
+    },
+    {
+      "prompt": "计算 37 + 58 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.9882,
+      "q_after": 0.9914,
+      "answer_tail": "37 + 58 等于 95。"
+    },
+    {
+      "prompt": "计算 84 和 30 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 2.0,
+      "mode": "explore",
+      "q_before": 0.9914,
+      "q_after": 0.7509,
+      "answer_tail": "总结：84和30的最大公约数是2。"
+    }
+  ],
+  "warm": [
+    {
+      "prompt": "计算 56 和 42 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "因此，56和42的最大公约数是14。"
+    },
+    {
+      "prompt": "计算 90 和 36 的最大公约数，并说明步骤。",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "因此，90和36的最大公约数是18。"
+    },
+    {
+      "prompt": "计算 187 + 64 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "187 + 64 等于 251。"
+    },
+    {
+      "prompt": "计算 59 + 88 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "59 + 88 等于 147。"
+    },
+    {
+      "prompt": "计算 27 × 16 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "27 × 16 等于 432。"
+    },
+    {
+      "prompt": "计算 15 × 14 等于多少？",
+      "model": "qwen-strong",
+      "task_type": "reasoning",
+      "score": 10.0,
+      "mode": "exploit",
+      "q_before": 0.7509,
+      "q_after": 0.7509,
+      "answer_tail": "15 × 14 等于 210。"
+    }
+  ],
+  "cold_summary": {
+    "avg_score": 8.67,
+    "models": {
+      "qwen-small": 6
+    }
+  },
+  "warm_summary": {
+    "avg_score": 10.0,
+    "models": {
+      "qwen-strong": 6
+    }
+  },
+  "policy": [
+    {
+      "task_type": "coding",
+      "routing_key": "qwen-small",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "coding",
+      "routing_key": "qwen-strong",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "general",
+      "routing_key": "qwen-small",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "general",
+      "routing_key": "qwen-strong",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "reasoning",
+      "routing_key": "qwen-strong",
+      "q_value": 0.750928727124227,
+      "sample_count": 30,
+      "avg_quality": 0.9199999999999999,
+      "avg_latency_ms": 1480.83216999997,
+      "updated_at": "2026-10-23 06:31:57"
+    },
+    {
+      "task_type": "reasoning",
+      "routing_key": "qwen-small",
+      "q_value": 0.6190700080377134,
+      "sample_count": 18,
+      "avg_quality": 0.8222222222222221,
+      "avg_latency_ms": 379.0797555554188,
+      "updated_at": "2026-10-23 06:31:11"
+    },
+    {
+      "task_type": "translation",
+      "routing_key": "qwen-small",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "translation",
+      "routing_key": "qwen-strong",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "writing",
+      "routing_key": "qwen-small",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    },
+    {
+      "task_type": "writing",
+      "routing_key": "qwen-strong",
+      "q_value": 0.5,
+      "sample_count": 0,
+      "avg_quality": 0,
+      "avg_latency_ms": 0,
+      "updated_at": "2026-10-23 06:29:10"
+    }
+  ]
+}
