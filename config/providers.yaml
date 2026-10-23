@@ -1,0 +1,40 @@
+# Local development configuration.
+# The course repository is published without this file; it is required at startup.
+# Here we register a local Ollama instance through its OpenAI-compatible API,
+# so no paid provider keys are needed.
+
+providers:
+  openai:                       # provider class name must exist in app/core/router.py PROVIDER_MAP
+    base_url: ${OLLAMA_BASE_URL}
+    health_url: ${OLLAMA_HEALTH_URL}
+    timeout: 180
+    max_retries: 1
+    key_strategy: round_robin
+    keys:
+      - key: ${OLLAMA_KEY}
+        rpm: 1000
+    models:
+      - name: qwen2.5:0.5b      # weak candidate
+        routing_keys:
+          - qwen-small
+        pricing:
+          prompt: 0.0
+          completion: 0.0
+      - name: qwen2.5:3b        # strong candidate
+        routing_keys:
+          - qwen-strong
+        pricing:
+          prompt: 0.0
+          completion: 0.0
+
+server:
+  host: 127.0.0.1
+  port: 8000
+
+auth:
+  api_key: ${ROUTER_INTERNAL_API_KEY}
+
+semantic_routing:
+  enabled: false
+
+keyword_rules: []
