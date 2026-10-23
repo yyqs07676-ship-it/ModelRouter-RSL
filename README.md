@@ -1,4 +1,4 @@
-> **课程作业二（方案 a）：本项目在 ModelRouter 基础上实现了 RSL（Recursive Self-Learning）。**
+> **课程作业二。**
 >
 > - 作业说明与实验结果：[README_RSL.md](README_RSL.md)
 > - 设计文档：[docs/RSL_DESIGN.md](docs/RSL_DESIGN.md)
